@@ -1,6 +1,9 @@
 function displayResults(responseJson) {
     console.log(responseJson)
     $('#results').empty()
+    if (responseJson.total==0){
+    $('#results').append("<p>No Results Found</p>")
+    }
     for (let i = 0; i < responseJson.data.length; i++) {
         $('#results').append(`
     <div>
